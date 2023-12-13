@@ -20,9 +20,10 @@ public class Frame_login extends javax.swing.JFrame {
         txtPassWord = new javax.swing.JPasswordField();
         btnLogIn = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Login");
         setLocation(new java.awt.Point(435, 150));
+
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setText("Login");
@@ -48,10 +49,8 @@ public class Frame_login extends javax.swing.JFrame {
                 .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(47, 47, 47)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtUser)
                     .addComponent(txtPassWord, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE))
