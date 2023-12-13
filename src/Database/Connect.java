@@ -12,10 +12,7 @@ public class Connect {
 
     public static void connectDB(){
         try(Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
-            String sql = "SELECT * FROM tbACCOUNT";
-            try (PreparedStatement statement = connection.prepareStatement(sql); ResultSet resultSet = statement.executeQuery()) {
                 System.out.println("Connect successful!");
-            }
         } catch (Exception e) {
             System.out.println(e);
             System.out.println("Connect false!");

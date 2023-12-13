@@ -22,8 +22,7 @@ public class Frame_main extends javax.swing.JFrame {
         jMenu10 = new javax.swing.JMenu();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
+        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
@@ -41,15 +40,24 @@ public class Frame_main extends javax.swing.JFrame {
         jMenuBar3.add(jMenu10);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Trang chủ");
         setLocation(new java.awt.Point(300, 100));
 
         jMenu1.setText("Tài khoản");
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
 
-        jMenu3.setText("Đăng nhập");
-        jMenu1.add(jMenu3);
-
-        jMenu4.setText("Đăng xuất");
-        jMenu1.add(jMenu4);
+        jRadioButtonMenuItem1.setSelected(true);
+        jRadioButtonMenuItem1.setText("Đăng nhập");
+        jRadioButtonMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jRadioButtonMenuItem1);
 
         jMenuBar1.add(jMenu1);
 
@@ -78,6 +86,14 @@ public class Frame_main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+        new Frame_login().setVisible(true);
+    }//GEN-LAST:event_jMenu1ActionPerformed
+
+    private void jRadioButtonMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem1ActionPerformed
+        new Frame_login().setVisible(true);
+    }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
+
     public static void main(String args[]) {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -85,10 +101,7 @@ public class Frame_main extends javax.swing.JFrame {
                 new Frame_main().setVisible(true);
             }
         });
-
-        // gọi đến hàm connectDB trong package Database
-        Connect connect = new Connect();
-        connect.connectDB();
+        Connect.connectDB();
 
         
     }
@@ -97,8 +110,6 @@ public class Frame_main extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
@@ -107,5 +118,6 @@ public class Frame_main extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuBar jMenuBar3;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     // End of variables declaration//GEN-END:variables
 }
