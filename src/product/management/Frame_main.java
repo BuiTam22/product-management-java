@@ -39,7 +39,7 @@ public class Frame_main extends javax.swing.JFrame {
         jMenu10.setText("Edit");
         jMenuBar3.add(jMenu10);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Trang chủ");
         setLocation(new java.awt.Point(300, 100));
 
@@ -57,9 +57,11 @@ public class Frame_main extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Quản lý");
+        jMenu2.setEnabled(false);
         jMenuBar1.add(jMenu2);
 
         jMenu5.setText("Mua hàng");
+        jMenu5.setEnabled(false);
         jMenuBar1.add(jMenu5);
 
         jMenu6.setText("Trợ giúp");
@@ -81,11 +83,11 @@ public class Frame_main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnLogInMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInMenuActionPerformed
+    private void btnLogInMenuActionPerformed(java.awt.event.ActionEvent evt) {                                             
         Frame_login frameLogIn = new Frame_login();
         frameLogIn.setVisible(true);
         frameLogIn.setLocationRelativeTo(null);
-    }//GEN-LAST:event_btnLogInMenuActionPerformed
+    }
 
     public static void main(String args[]) {
         
