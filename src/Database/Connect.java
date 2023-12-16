@@ -53,4 +53,59 @@ public class Connect {
             }
         }
     }
+
+    public static String getRoleQuery(String sql) {
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            try (PreparedStatement statement = connection.prepareStatement(sql);
+                    ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    String role = resultSet.getString("title");
+                    return role;
+                }
+            }
+            return "";
+        } catch (Exception e) {
+            System.out.println(e);
+            System.out.println("Select Lỗi!");
+            return "";
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    System.out.println(e);
+                }
+            }
+        }
+    }
+
+    public static String getFullNameQuery(String sql) {
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            try (PreparedStatement statement = connection.prepareStatement(sql);
+                    ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    String fullname = resultSet.getString("fullname");
+                    return fullname;
+                }
+            }
+            return "";
+        } catch (Exception e) {
+            System.out.println(e);
+            System.out.println("Select Lỗi!");
+            return "";
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    System.out.println(e);
+                }
+            }
+        }
+    }
+
 }
